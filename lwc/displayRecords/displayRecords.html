@@ -1,0 +1,45 @@
+<template>
+    <lightning-card>
+        <!--02-01-2024-->
+        <div class="quickHead">
+            <h1 class="quickLinks">Quick Links</h1>
+        
+        <template for:each={account} for:item="acc">
+            <div class="accdata" key={acc.id}>
+                <p>
+                <a data-ac={acc.Id} onclick={handleScroll} 
+                href={clickaccId}>> {acc.Name}
+                </a>
+            </p>
+            </div>
+        </template>
+    </div>
+        
+                 <template for:each={account} for:item="acc">
+                     <div key={acc.id}>
+                        <h1 class="slds-text-heading_medium slds-m-bottom_medium heading" 
+                        id={acc.Id}
+                        >{acc.Name}</h1>
+                        </div>
+                        
+                        <div key={acc.name} class="container">
+                        <template for:each={acc.Contacts} for:item="con">
+                                <div key={con.id} class="box">
+                                    <div>
+                                        <p class="slds-text-heading_medium slds-m-bottom_medium">{con.date}<br>
+                                            {con.time}</p>
+                                        <p class="slds-text-heading_small slds-align_absolute-center">{con.LastName}</p>
+                                        <h2 class="slds-text-heading_medium slds-m-vertical_medium">{con.FirstName}</h2>
+                                        <button class="slds-button slds-button_success slds-align_absolute-center" data-accname={acc.Name} 
+                                        data-accid={acc.Id} data-conid={con.Id} onclick={handleBooking}>Book Now</button><br>
+                                        <button class="slds-button slds-button_success slds-align_absolute-center" data-accid={acc.Id} 
+                                        onclick={handleCancel}>Cancel</button>
+                                    </div>
+                                </div>
+                        </template>
+                     </div>
+                </template>
+                
+    </lightning-card>
+    <!--c-child-contact accountid={accountId}></c-child-contact-->
+</template>

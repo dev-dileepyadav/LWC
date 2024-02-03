@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Parent component">
+        <lightning-input label="Enter your name" onchange={handleChange}></lightning-input>
+        <lightning-input label="Data for checkbox" onchange={handleChanges} value={value}></lightning-input>
+        <template for:each={accountData} for:item="acc">
+            <div key={acc.id}>
+                <table>
+                    <tr>
+                        <td>{acc.Name}</td>
+                        <td>{acc.Phone}</td>
+                    </tr>
+                </table>
+            </div>
+        </template>
+</lightning-card>
+<c-child valuefromparent={parentValue} onselectedvalues={selectedBoxValues}></c-child>
+</template>

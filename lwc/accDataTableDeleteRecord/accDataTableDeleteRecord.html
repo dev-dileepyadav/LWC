@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Account Records">
+        <lightning-datatable 
+        key-field="id" 
+        data={data} 
+        columns={columns}
+        onrowaction={handleRowAction}
+        ></lightning-datatable>
+
+
+        <!--template if:true={data} for:each={data} for:item="d">
+            <lightning-layout key={d.Id}>
+                <lightning-layout-item>
+                    <table >
+                        <tr>
+                            <td>{d.Name}</td>
+                            <td>{d.Phone}</td>
+                        </tr>
+                    </table>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <lightning-button label="Delete" onclick={handleDelete} data-recordid={d.Id}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            
+        </template-->
+    </lightning-card>
+
+
+</template>

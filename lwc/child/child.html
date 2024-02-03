@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Child component">
+    <p>Value from parent:{valuefromparent}</p>
+    <h1>{count}</h1>
+    
+    
+
+    <lightning-checkbox-group name="Checkbox Group"
+                              label="Checkbox Group"
+                              options={options}
+                              value={value}
+                              onchange={handleChange}></lightning-checkbox-group>
+    <p>Selected Values are: {selectedValues}</p>
+
+
+    
+</lightning-card>
+</template>

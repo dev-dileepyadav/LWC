@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="First Componemt">
+        <template for:each={data} for:item="acc">
+            <div key={acc.id}>
+                <h1>{acc.Name}</h1>
+            </div>
+            <template for:each={acc.Contacts} for:item="con">
+                <div key={con.id}>
+                    <ul>
+                        <li>{con.FirstName} - {con.LastName}</li>
+                    </ul>
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+</template>

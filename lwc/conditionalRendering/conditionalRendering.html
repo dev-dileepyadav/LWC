@@ -1,0 +1,52 @@
+<template>
+    <template if:true={isText}>
+        <p class="false">Note:{text}</p>
+    </template>
+    <template if:false={isText}>
+        <p class="true">Note:{text}</p>
+    </template>
+    <lightning-input label="Enter Your Name" onchange={handleChange}>
+    </lightning-input>
+    <!--
+    <table border="1" class="header">
+        <td>Name</td>
+        <td>Slalry</td>
+        <td>Pin</td>
+        <td>Mob.</td>
+    </table>
+    <template for:each={staff} for:item="st">
+        
+        <div key={st.name}>
+            
+        <table border="1" class="data">
+            <td>{st.name}</td>
+            <td>{st.salary}</td>
+            <td>{st.pin}</td>
+            <td>{st.Mob}</td>
+           
+        </table>
+    </div>
+        
+    </template>
+    -->
+    <template iterator:it={staff}>
+        <template if:true={it.first}>
+            <table key={it.value.name} border="1" class="header">
+                <td>Name</td>
+                <td>Slalry</td>
+                <td>Pin</td>
+                <td>Mob.</td>
+            </table>
+        </template>
+        <table border="1" class="data" key={it.value.name}>
+            <td>{it.value.name}</td>
+            <td>{it.value.salary}</td>
+            <td>{it.value.pin}</td>
+            <td>{it.value.Mob}</td>
+        </table>
+        <div key={it.value.name} if:true={it.last}>
+            This is the end of the table
+        </div>
+    </template>
+
+</template>

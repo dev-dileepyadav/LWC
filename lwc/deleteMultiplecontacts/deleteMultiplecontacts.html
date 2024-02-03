@@ -1,0 +1,6 @@
+<template>
+    <lightning-button label="Delete Selected Records" onclick={deleteSelectedRecords}></lightning-button>
+
+    <lightning-datatable 
+    data={contacts.data} columns={columns} key-field='id' onrowselection={prepareSelectRecords} ></lightning-datatable>
+</template>

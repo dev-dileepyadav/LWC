@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Wrapper Class Demo">
+        <template if:true={wrappedList.data}>
+            <lightning-accordion>
+                <template for:each={wrappedList.data} for:item="wrap">
+                    <lightning-accordion-section name={wrap.acc.Id} label={wrap.acc.Name} key={wrap.acc.Id}>
+                        <template for:each={wrap.con} for:item="conWrap">
+                            <lightning-layout vertical-align="center" key={conWrap.Id}>
+                                <li>
+                                    <ul>
+                                        {conWrap.FirstName}
+                                        {conWrap.LastName}
+                                    </ul>
+                                    
+                                </li>
+                            </lightning-layout>
+                        </template>
+                    </lightning-accordion-section>
+                </template>
+            </lightning-accordion>
+
+        </template>
+    </lightning-card>
+</template>

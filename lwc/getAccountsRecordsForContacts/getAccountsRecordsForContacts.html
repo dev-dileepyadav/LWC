@@ -1,0 +1,18 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item size="2">
+    <lightning-card title="Accounts">
+    <template for:each={accounts.data} for:item="account" for:index="index">
+        <p key={account.id}>
+            <a href="#" onclick={showContacts} data-accountid={account.Id}>{account.Name}</a>
+        </p>
+    </template>
+</lightning-card>
+</lightning-layout-item>
+<lightning-layout-item size="10">
+    <lightning-card title="Related contacts">
+        <c-get-accounts-related-contacts recordid={accountId}></c-get-accounts-related-contacts>
+    </lightning-card>
+</lightning-layout-item>
+</lightning-layout>
+</template>

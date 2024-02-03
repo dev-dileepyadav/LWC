@@ -1,0 +1,16 @@
+.true{
+
+    background-color: black;
+    color: gold;
+}
+
+.false{
+background-color: red;
+color: white;
+}
+
+
+
+tr:nth-child(even) {
+    background-color: rgba(186, 9, 235, 0.235);
+  }
